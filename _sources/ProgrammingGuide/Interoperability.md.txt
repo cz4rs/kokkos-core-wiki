@@ -1,4 +1,4 @@
-# 12. Interoperability and Legacy Codes
+# 13. Interoperability and Legacy Codes
 
 One goal of Kokkos is to support incremental adoption in legacy applications. This facilitates a step by step conversion allowing for continuous testing of functionality (and in certain bounds) of performance. One feature of this is full interoperability with the underlying backend programming models. This also allows for target specific optimizations written directly in the backend model in order to achieve maximal performance.
 
@@ -59,7 +59,7 @@ In both cases, it is mandatory to fix the Layout of the Kokkos view to the actua
 
 ## 12.3 Raw allocations through Kokkos
 
-A simple way to add support for multiple memory spaces to a legacy app is to use [`kokkos_malloc`](kokkos_malloc), [`kokkos_free`](kokkos_free) and [`kokkos_realloc`](kokkos_realloc). The functions are templated on the memory space and thus allow targeted placement of data structures:
+A simple way to add support for multiple memory spaces to a legacy app is to use [`kokkos_malloc`](../API/core/c_style_memory_management/malloc), [`kokkos_free`](../API/core/c_style_memory_management/free) and [`kokkos_realloc`](../API/core/c_style_memory_management/realloc). The functions are templated on the memory space and thus allow targeted placement of data structures:
 
 ```c++
 // Allocate an array of 100 doubles in the default memory space

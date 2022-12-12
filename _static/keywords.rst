@@ -127,7 +127,7 @@ Enable Options
       * Enable building examples
       * ``OFF``
 
-    * * ``Kokkos_ENABLE_MULTIPLE_KERNEL_INSTANTIATIONS``
+    * * ``Kokkos_ENABLE_HIP_MULTIPLE_KERNEL_INSTANTIATIONS``
       * Instantiate multiple kernels at compile time - improve performance but increase compile time
       * ``OFF``
 
@@ -272,6 +272,10 @@ Architecture Keywords
       - Description/info
       - Default
 
+    * * ``Kokkos_ARCH_NATIVE``
+      * Optimize for the local CPU architecture
+      * ``OFF``
+
     * * ``Kokkos_ARCH_A64FX``
       * Optimize for ARMv8.2 with SVE Support
       * ``OFF``
@@ -314,6 +318,10 @@ Architecture Keywords
 
     * * ``Kokkos_ARCH_BGQ``
       * Optimize for BGQ architecture
+      * ``OFF``
+
+    * * ``Kokkos_ARCH_HOPPER90``
+      * Optimize for the NVIDIA Hopper generation CC 9.0 <sup>since Kokkos 4.0</sup>
       * ``OFF``
 
     * * ``Kokkos_ARCH_HSW``
@@ -402,6 +410,10 @@ Architecture Keywords
 
     * * ``Kokkos_ARCH_VEGA908``
       * Optimize for AMD GPU MI100 GFX908
+      * ``OFF``
+
+    * * ``Kokkos_ARCH_VEGA90A``
+      * Optimize for AMD GPU MI200 series GFX90A
       * ``OFF``
 
     * * ``Kokkos_ARCH_VOLTA70``

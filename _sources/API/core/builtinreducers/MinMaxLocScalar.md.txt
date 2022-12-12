@@ -18,7 +18,7 @@ I maxLoc = result.max_loc;
 ## Synopsis 
 
 ```c++
-template<class Scalar>
+template<class Scalar, class Index>
 struct MinMaxLocScalar{
   Scalar min_val;
   Scalar max_val;
@@ -26,7 +26,6 @@ struct MinMaxLocScalar{
   Index max_loc;
 
   void operator = (const MinMaxLocScalar& rhs);
-  void operator = (const volatile MinMaxLocScalar& rhs);
 };
 ```
 
@@ -42,7 +41,4 @@ struct MinMaxLocScalar{
 ### Assignment operators
 
  * `void operator = (const MinMaxLocScalar& rhs);` 
-      assign `min_val`, `max_val`, `min_loc` and `max_loc` from `rhs`;
-
- * `void operator = (const volatile MinMaxLocScalar& rhs);` 
       assign `min_val`, `max_val`, `min_loc` and `max_loc` from `rhs`;
