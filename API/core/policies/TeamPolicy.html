@@ -184,7 +184,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../keywords.html">CMake Keywords</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../core-index.html">API: Core</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="../Initialize-and-Finalize.html">Initialize and Finalize</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/initialize.html">initialize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/initialize.html"><code class="docutils literal notranslate"><span class="pre">initialize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/finalize.html"><code class="docutils literal notranslate"><span class="pre">finalize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/ScopeGuard.html">ScopeGuard</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/InitializationSettings.html">InitializationSettings</a></li>
@@ -719,7 +719,10 @@ otherwise identical <code class="docutils literal notranslate"><span class="pre"
 <li><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">scratch_size_max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">level</span><span class="p">);</span><span class="w"> </span>
 </pre></div>
 </div>
-<p>Returns: the maximum total scratch size in bytes, for the given level.</p>
+<p>Returns: the maximum total scratch size in bytes, for the given level. Note: If a kernel performs
+team-level reductions or scan operations, not all of this memory will be available for dynamic
+user requests. Some of that maximal scratch size is being used for internal operations. The
+actual size of these internal allocations depends on the value type used in the reduction or scan.</p>
 </li>
 </ul>
 </section>

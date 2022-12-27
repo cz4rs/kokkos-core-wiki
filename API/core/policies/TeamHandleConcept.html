@@ -184,7 +184,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../keywords.html">CMake Keywords</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../core-index.html">API: Core</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="../Initialize-and-Finalize.html">Initialize and Finalize</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/initialize.html">initialize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/initialize.html"><code class="docutils literal notranslate"><span class="pre">initialize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/finalize.html"><code class="docutils literal notranslate"><span class="pre">finalize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/ScopeGuard.html">ScopeGuard</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/InitializationSettings.html">InitializationSettings</a></li>
@@ -503,6 +503,10 @@ and are thus subject to change.</p>
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">#</a></h2>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">TeamHandleConcept</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Nested aliases</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">execution_space</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="cm">/*see details in the description below*/</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">scratch_memory_space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/*see details in the description below*/</span><span class="p">;</span><span class="w"></span>
+
 <span class="w">    </span><span class="c1">// Constructor, Destructor, Assignment</span>
 <span class="w">    </span><span class="n">TeamHandleConcept</span><span class="p">(</span><span class="w"> </span><span class="n">TeamHandleConcept</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="n">TeamHandleConcept</span><span class="p">(</span><span class="w"> </span><span class="n">TeamHandleConcept</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">;</span><span class="w"></span>
@@ -549,6 +553,13 @@ and are thus subject to change.</p>
 </section>
 <section id="public-class-members">
 <h2>Public Class Members<a class="headerlink" href="#public-class-members" title="Permalink to this heading">#</a></h2>
+<section id="nested-aliases">
+<h3>Nested aliases<a class="headerlink" href="#nested-aliases" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">execution_space</span></code>: specifies the <a class="reference external" href="https://kokkos.github.io/kokkos-core-wiki/API/core/execution_spaces.html">execution space</a> associated to the team</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scratch_memory_space</span></code>: the scratch memory space associated to this team’s execution space</p></li>
+</ul>
+</section>
 <section id="constructors">
 <h3>Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">#</a></h3>
 <ul>
@@ -782,6 +793,7 @@ pointer for every team member.</p></li>
 <li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">TeamHandleConcept</span></code></a><ul>
 <li><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li><a class="reference internal" href="#public-class-members">Public Class Members</a><ul>
+<li><a class="reference internal" href="#nested-aliases">Nested aliases</a></li>
 <li><a class="reference internal" href="#constructors">Constructors</a></li>
 <li><a class="reference internal" href="#assignment">Assignment</a></li>
 <li><a class="reference internal" href="#index-queries">Index Queries</a></li>
