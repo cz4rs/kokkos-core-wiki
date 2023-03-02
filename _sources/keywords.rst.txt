@@ -143,10 +143,6 @@ Enable Options
       * Perform extra large memory tests
       * ``OFF``
 
-    * * ``Kokkos_ENABLE_PROFILING``
-      * Create bindings for profiling tools
-      * ``ON``
-
     * * ``Kokkos_ENABLE_PROFILING_LOAD_PRINT``
       * Print information about which profiling tools got loaded
       * ``OFF``
@@ -154,24 +150,6 @@ Enable Options
     * * ``Kokkos_ENABLE_TESTS``
       * Build tests
       * ``OFF``
-
-.. _keywords_enable_other_options:
-
-Other Options
-=============
-
-.. list-table::
-    :widths: 25 50 25
-    :header-rows: 1
-    :align: left
-
-    * -
-      - Description/info
-      - Default
-
-    * * ``Kokkos_CXX_STANDARD``
-      * The C++ standard for Kokkos to use: c++14, c++17, or c++20. This should be given in CMake style as 14, 17, or 20.
-      * STRING Default: 14
 
 .. _keywords_tpls:
 

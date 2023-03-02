@@ -177,6 +177,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../ProgrammingGuide/Compatibility.html">12 Backwards &amp; Future Compatibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../ProgrammingGuide/Interoperability.html">13. Interoperability and Legacy Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../ProgrammingGuide/Kokkos-and-Virtual-Functions.html">14. Kokkos and Virtual Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProgrammingGuide/SIMD.html">15. SIMD Types</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../requirements.html">Requirements</a></li>
@@ -187,7 +188,7 @@
 <li class="toctree-l3"><a class="reference internal" href="initialize_finalize/initialize.html"><code class="docutils literal notranslate"><span class="pre">initialize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="initialize_finalize/finalize.html"><code class="docutils literal notranslate"><span class="pre">finalize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="initialize_finalize/ScopeGuard.html">ScopeGuard</a></li>
-<li class="toctree-l3"><a class="reference internal" href="initialize_finalize/InitializationSettings.html">InitializationSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="initialize_finalize/InitializationSettings.html"><code class="docutils literal notranslate"><span class="pre">InitializationSettings</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="initialize_finalize/InitArguments.html">InitArguments</a></li>
 </ul>
 </li>
@@ -276,6 +277,7 @@
 <li class="toctree-l3"><a class="reference internal" href="numerics/mathematical-constants.html">Mathematical constants</a></li>
 <li class="toctree-l3"><a class="reference internal" href="numerics/mathematical-functions.html">Common math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="numerics/numeric-traits.html">Numeric traits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="numerics/bit-manipulation.html">Bit manipulation</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="c_style_memory_management.html">C-style memory management</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -405,10 +407,17 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../simd-index.html">API: SIMD</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../simd/simd.html"><code class="docutils literal notranslate"><span class="pre">Experimental::simd</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simd/simd_mask.html"><code class="docutils literal notranslate"><span class="pre">Experimental::simd_mask</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simd/where_expression.html">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../simd/where_expression.html#example">Example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../alphabetical.html">API in Alphabetical Order</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../DeprecationPage.html">Deprecation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../known-issues.html">Known issues</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../usecases.html">Use Cases and Examples</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../usecases.html">Use Cases and Examples</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../usecases/MPI-Halo-Exchange.html">MPI Halo Exchange</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../usecases/Average-To-Nodes.html">ScatterView averaging elements to nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../usecases/MDRangePolicy.html">MDRangePolicy Use Case</a></li>
@@ -422,7 +431,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../usecases/Moving_from_EnableUVM_to_SharedSpace.html">Moving code from requiring <code class="docutils literal notranslate"><span class="pre">Kokkos_ENABLE_CUDA_UVM</span></code> to using <code class="docutils literal notranslate"><span class="pre">SharedSpace</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../testing-and-issue-tracking.html">Testing and Issue Tracking</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../testing-and-issue-tracking.html">Testing and Issue Tracking</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../testing-and-issue-tracking/Requirements-Issues-and-Feedback.html">Requirements, Issues and Feedback</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../testing-and-issue-tracking/Testing-Process-Details.html">Attachments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../testing-and-issue-tracking/Testing-Processes.html">Kokkos Testing Processes and Change Process</a></li>
@@ -430,7 +439,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/kokkos/kokkos-tutorials">Tutorials</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../videolectures.html">Video lectures and slides</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../videolectures.html">Video lectures and slides</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=rUIcWtFU5qM">1. Intro, Build, Parallel dispatch</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=O-asHTtO7O4">2. Views and Spaces</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=nGyJS8u-6GY">3. Multidim loops and Data Structures</a></li>
@@ -465,7 +474,7 @@
         </a>
         <div class="content-icon-container">
 <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/kokkos/kokkos-core-wiki/blob/main/docs/source/API/core/Detection-Idiom.md" title="Edit this page">
+  <a class="muted-link" href="https://github.com/kokkos/kokkos-core-wiki/blob/main/docs/source/API/core/Detection-Idiom.rst" title="Edit this page">
     <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
@@ -489,16 +498,16 @@
           </label>
         </div>
         <article role="main">
-          <section class="tex2jax_ignore mathjax_ignore" id="detection-idiom">
+          <section id="detection-idiom">
 <h1>Detection Idiom<a class="headerlink" href="#detection-idiom" title="Permalink to this heading">#</a></h1>
 <p>The Detection Idiom is used to recognize, in an SFINAE-friendly way, the validity of any C++ expression.</p>
-<p>Header File: <code class="docutils literal notranslate"><span class="pre">Kokkos_DetectionIdiom.hpp</span></code></p>
+<p>Header File: <code class="docutils literal notranslate"><span class="pre">&lt;Kokkos_DetectionIdiom.hpp&gt;</span></code></p>
 <p>The Kokkos Detection Idiom is based upon the detection idiom from Version 2 of the C++ Extensions for
 Library Fundamentals, ISO/IEC TS 19568:2017, a draft of which can be found <a class="reference external" href="https://cplusplus.github.io/fundamentals-ts/v2.html#meta.detect">here</a>.</p>
 <p>The original C++ proposal can be found at <a class="reference external" href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4436.pdf">here</a>.</p>
 <section id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this heading">#</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// VOID_T and DETECTOR are exposition-only and not intended to be used directly.</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// VOID_T and DETECTOR are exposition-only and not intended to be used directly.</span>
 
 <span class="c1">// Convienent metafunction to leverage SFINAE</span>
 <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="o">&gt;</span>
@@ -519,7 +528,7 @@ Library Fundamentals, ISO/IEC TS 19568:2017, a draft of which can be found <a cl
 <span class="p">};</span>
 </pre></div>
 </div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">Kokkos</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">Kokkos</span><span class="w"> </span><span class="p">{</span>
 
 <span class="c1">// Simplification of the type returned by detected_t for types not supporting the archetype provided</span>
 <span class="k">struct</span><span class="w"> </span><span class="nc">nonesuch</span><span class="w"> </span><span class="p">{</span>
@@ -528,7 +537,7 @@ Library Fundamentals, ISO/IEC TS 19568:2017, a draft of which can be found <a cl
 <span class="p">};</span>
 
 <span class="c1">// is_detected is an alias for std::true_type if Op&lt;Args...&gt; is a valid type</span>
-<span class="c1">//  otherwise, an alias for std::false_type</span>
+<span class="c1">// otherwise, an alias for std::false_type</span>
 
 <span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Op</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="n">is_detected</span><span class="w"> </span><span class="o">=</span>
@@ -579,35 +588,32 @@ Library Fundamentals, ISO/IEC TS 19568:2017, a draft of which can be found <a cl
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
 <section id="detecting-an-expression">
 <h3>Detecting an expression<a class="headerlink" href="#detecting-an-expression" title="Permalink to this heading">#</a></h3>
-<p>Suppose we needed to write a type trait to detect if a given type <code class="docutils literal notranslate"><span class="pre">T</span></code>
-is copy assignable.  First we write an archetype helper alias:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<p>Suppose we needed to write a type trait to detect if a given type <code class="docutils literal notranslate"><span class="pre">T</span></code> is copy assignable. First we write an archetype helper alias:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="n">copy_assign_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">decltype</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">declval</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&amp;&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">declval</span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;&gt;</span><span class="p">());</span>
 </pre></div>
 </div>
 <p>Then the trait can be easily expressed as:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="n">is_copy_assignable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">is_detected</span><span class="o">&lt;</span><span class="n">copy_assign_t</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>If we also wanted to check that the return type of the copy assignment
-is <code class="docutils literal notranslate"><span class="pre">T&amp;</span></code>, we would use:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<p>If we also wanted to check that the return type of the copy assignment is <code class="docutils literal notranslate"><span class="pre">T&amp;</span></code>, we would use:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="n">is_canonical_copy_assignable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">is_detected_exact</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">copy_assign_t</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="detecting-a-nested-typedef">
 <h3>Detecting a nested typedef<a class="headerlink" href="#detecting-a-nested-typedef" title="Permalink to this heading">#</a></h3>
-<p>Suppose we want to use a nested <code class="docutils literal notranslate"><span class="pre">MyType::difference_type</span></code> if it
-exists, otherwise, we want to use <code class="docutils literal notranslate"><span class="pre">std::ptrdiff_t</span></code>:</p>
+<p>Suppose we want to use a nested <code class="docutils literal notranslate"><span class="pre">MyType::difference_type</span></code> if it exists, otherwise, we want to use <code class="docutils literal notranslate"><span class="pre">std::ptrdiff_t</span></code>:</p>
 <p>First we write an archetype helper alias:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="n">diff_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">::</span><span class="n">difference_type</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Then we can declare our type:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">our_difference_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">detected_or_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">ptrdiff_t</span><span class="p">,</span><span class="w"> </span><span class="n">diff_t</span><span class="p">,</span><span class="w"> </span><span class="n">MyType</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="n">our_difference_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">detected_or_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">ptrdiff_t</span><span class="p">,</span><span class="w"> </span><span class="n">diff_t</span><span class="p">,</span><span class="w"> </span><span class="n">MyType</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>

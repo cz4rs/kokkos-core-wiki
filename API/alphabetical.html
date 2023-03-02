@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Deprecation" href="../DeprecationPage.html" /><link rel="prev" title="is_sorted_until" href="algorithms/std-algorithms/all/StdIsSortedUntil.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Deprecation" href="../DeprecationPage.html" /><link rel="prev" title="Interface" href="simd/where_expression.html" />
 
     <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
         <title>API in Alphabetical Order - Kokkos documentation</title>
@@ -177,6 +177,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../ProgrammingGuide/Compatibility.html">12 Backwards &amp; Future Compatibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ProgrammingGuide/Interoperability.html">13. Interoperability and Legacy Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ProgrammingGuide/Kokkos-and-Virtual-Functions.html">14. Kokkos and Virtual Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ProgrammingGuide/SIMD.html">15. SIMD Types</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../requirements.html">Requirements</a></li>
@@ -187,7 +188,7 @@
 <li class="toctree-l3"><a class="reference internal" href="core/initialize_finalize/initialize.html"><code class="docutils literal notranslate"><span class="pre">initialize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/initialize_finalize/finalize.html"><code class="docutils literal notranslate"><span class="pre">finalize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/initialize_finalize/ScopeGuard.html">ScopeGuard</a></li>
-<li class="toctree-l3"><a class="reference internal" href="core/initialize_finalize/InitializationSettings.html">InitializationSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/initialize_finalize/InitializationSettings.html"><code class="docutils literal notranslate"><span class="pre">InitializationSettings</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/initialize_finalize/InitArguments.html">InitArguments</a></li>
 </ul>
 </li>
@@ -276,6 +277,7 @@
 <li class="toctree-l3"><a class="reference internal" href="core/numerics/mathematical-constants.html">Mathematical constants</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/numerics/mathematical-functions.html">Common math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="core/numerics/numeric-traits.html">Numeric traits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="core/numerics/bit-manipulation.html">Bit manipulation</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="core/c_style_memory_management.html">C-style memory management</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -405,10 +407,17 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="simd-index.html">API: SIMD</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="simd/simd.html"><code class="docutils literal notranslate"><span class="pre">Experimental::simd</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="simd/simd_mask.html"><code class="docutils literal notranslate"><span class="pre">Experimental::simd_mask</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="simd/where_expression.html">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simd/where_expression.html#example">Example</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API in Alphabetical Order</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DeprecationPage.html">Deprecation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../known-issues.html">Known issues</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases and Examples</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../usecases.html">Use Cases and Examples</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/MPI-Halo-Exchange.html">MPI Halo Exchange</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/Average-To-Nodes.html">ScatterView averaging elements to nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../usecases/MDRangePolicy.html">MDRangePolicy Use Case</a></li>
@@ -422,7 +431,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../usecases/Moving_from_EnableUVM_to_SharedSpace.html">Moving code from requiring <code class="docutils literal notranslate"><span class="pre">Kokkos_ENABLE_CUDA_UVM</span></code> to using <code class="docutils literal notranslate"><span class="pre">SharedSpace</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../testing-and-issue-tracking.html">Testing and Issue Tracking</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../testing-and-issue-tracking.html">Testing and Issue Tracking</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../testing-and-issue-tracking/Requirements-Issues-and-Feedback.html">Requirements, Issues and Feedback</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing-and-issue-tracking/Testing-Process-Details.html">Attachments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing-and-issue-tracking/Testing-Processes.html">Kokkos Testing Processes and Change Process</a></li>
@@ -430,7 +439,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/kokkos/kokkos-tutorials">Tutorials</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../videolectures.html">Video lectures and slides</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../videolectures.html">Video lectures and slides</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=rUIcWtFU5qM">1. Intro, Build, Parallel dispatch</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=O-asHTtO7O4">2. Views and Spaces</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=nGyJS8u-6GY">3. Multidim loops and Data Structures</a></li>
@@ -701,22 +710,22 @@
 <td class="text-left"><p><a class="reference internal" href="core/View.html"><span class="doc std std-doc">View</span></a></p></td>
 <td class="text-left"><p>Mirror Host data to Device data</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/execution_spaces.html#cuda"><span class="std std-ref">Cuda</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="xref myst">Cuda</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>The CUDA Execution Space.</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="core/memory_spaces.html#cudaspace"><span class="std std-ref">CudaSpace</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="xref myst">CudaSpace</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>The primary CUDA Memory Space.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/memory_spaces.html#cudauvmspace"><span class="std std-ref">CudaUVMSpace</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="xref myst">CudaUVMSpace</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>The CUDA Memory Space providing access to unified memory page migratable allocations.</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="core/memory_spaces.html#cudahostpinnedspace"><span class="std std-ref">CudaHostPinnedSpace</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="xref myst">CudaHostPinnedSpace</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>The CUDA Memrory Space providing access to host pinned GPU-accessible host memory.</p></td>
@@ -731,7 +740,7 @@
 <td class="text-left"><p><a class="reference internal" href="core/Execution-Policies.html"><span class="doc std std-doc">Execution Policies</span></a></p></td>
 <td class="text-left"><p>Concept for execution policies.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/execution_spaces.html#executionspaceconcept"><span class="std std-ref">ExecutionSpace concept</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="xref myst">ExecutionSpace concept</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>Concept for execution spaces.</p></td>
@@ -746,12 +755,12 @@
 <td class="text-left"><p><a class="reference internal" href="core/Initialize-and-Finalize.html"><span class="doc std std-doc">Initialization and Finalization</span></a></p></td>
 <td class="text-left"><p>function to finalize Kokkos</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="core/memory_spaces.html#hostspace"><span class="std std-ref">HostSpace</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="xref myst">HostSpace</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>The primary Host Memory Space.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/execution_spaces.html#hpx"><span class="std std-ref">HPX</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="xref myst">HPX</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>Execution space using the HPX runtime system execution mechanisms.</p></td>
@@ -771,12 +780,12 @@
 <td class="text-left"><p><a class="reference internal" href="core/Initialize-and-Finalize.html"><span class="doc std std-doc">Initialization and Finalization</span></a></p></td>
 <td class="text-left"><p>function to initialize Kokkos</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/Traits.html#is-array-layout"><span class="std std-ref">is_array_layout</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="xref myst">is_array_layout</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Traits.html"><span class="doc std std-doc">Traits</span></a></p></td>
 <td class="text-left"><p>Trait to detect types that model the Layout concept</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="core/Traits.html#is-execution-policy"><span class="std std-ref">is_execution_policy</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="xref myst">is_execution_policy</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Traits.html"><span class="doc std std-doc">Traits</span></a></p></td>
 <td class="text-left"><p>Trait to detect types that model ExecutionPolicy concept</p></td>
@@ -784,24 +793,24 @@
 <tr class="row-odd"><td class="text-left"><p>is_execution_space</p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Traits.html"><span class="doc std std-doc">Traits</span></a></p></td>
-<td class="text-left"><p>Trait to detect types that model <a class="reference internal" href="core/execution_spaces.html#executionspaceconcept"><span class="std std-ref">ExecutionSpace concept</span></a></p></td>
+<td class="text-left"><p>Trait to detect types that model <span class="xref myst">ExecutionSpace concept</span></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="core/Traits.html#is-memory-space"><span class="std std-ref">is_memory_space</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="xref myst">is_memory_space</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Traits.html"><span class="doc std std-doc">Traits</span></a></p></td>
-<td class="text-left"><p>Trait to detect types that model <a class="reference internal" href="core/memory_spaces.html#memoryspaceconcept"><span class="std std-ref">MemorySpace concept</span></a></p></td>
+<td class="text-left"><p>Trait to detect types that model <span class="xref myst">MemorySpace concept</span></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/Traits.html#is-memory-traits"><span class="std std-ref">is_memory_traits</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="xref myst">is_memory_traits</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Traits.html"><span class="doc std std-doc">Traits</span></a></p></td>
 <td class="text-left"><p>Trait to detect specializations of <code class="docutils literal notranslate"><span class="pre">Kokkos::MemoryTraits</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="core/Traits.html#is-reducer"><span class="std std-ref">is_reducer</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="xref myst">is_reducer</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Traits.html"><span class="doc std std-doc">Traits</span></a></p></td>
 <td class="text-left"><p>Trait to detect types that model the <a class="reference internal" href="core/builtinreducers/ReducerConcept.html"><span class="doc std std-doc">Reducer concept</span></a></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/Traits.html#is-space"><span class="std std-ref">is_space</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="xref myst">is_space</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Traits.html"><span class="doc std std-doc">Traits</span></a></p></td>
 <td class="text-left"><p>Trait to detect types that model the Space concept</p></td>
@@ -861,7 +870,7 @@
 <td class="text-left"><p><a class="reference internal" href="core/Execution-Policies.html"><span class="doc std std-doc">Execution Policies</span></a></p></td>
 <td class="text-left"><p>Policy to iterate over a multidimensional index range.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/memory_spaces.html#memoryspaceconcept"><span class="std std-ref">MemorySpace concept</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="xref myst">MemorySpace concept</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>Concept for execution spaces.</p></td>
@@ -886,12 +895,12 @@
 <td class="text-left"><p><a class="reference internal" href="core/builtin_reducers.html"><span class="doc std std-doc">Built-in Reducers</span></a></p></td>
 <td class="text-left"><p>Reducer for Reduction providing both minimum and maximum and associated indicies</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="core/execution_spaces.html#openmp"><span class="std std-ref">OpenMP</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p><span class="xref myst">OpenMP</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>Execution space using non-target OpenMP parallel execution mechanisms.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/execution_spaces.html#openmptarget"><span class="std std-ref">OpenMPTarget</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="xref myst">OpenMPTarget</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>Execution space using targetoffload OpenMP parallel execution mechanisms.</p></td>
@@ -936,12 +945,12 @@
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>Split an existing execution space instance into multiple</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="core/policies/NestedPolicies.html#perteam"><span class="std std-ref">PerTeam</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="core/policies/NestedPolicies.html#_CPPv47PerTeam14TeamMemberType" title="PerTeam"><span class="xref myst cppkokkos cppkokkos-func">PerTeam</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Execution-Policies.html"><span class="doc std std-doc">Execution Policies</span></a></p></td>
 <td class="text-left"><p>Policy used in single construct to indicate once per team execution.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/policies/NestedPolicies.html#perthread"><span class="std std-ref">PerThread</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/policies/NestedPolicies.html#_CPPv49PerThread14TeamMemberType" title="PerThread"><span class="xref myst cppkokkos cppkokkos-func">PerThread</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Execution-Policies.html"><span class="doc std std-doc">Execution Policies</span></a></p></td>
 <td class="text-left"><p>Policy used in single construct to indicate once per thread execution.</p></td>
@@ -971,7 +980,7 @@
 <td class="text-left"><p><a class="reference internal" href="core/View.html"><span class="doc std std-doc">View</span></a></p></td>
 <td class="text-left"><p>Resize an existing view while maintaining the content</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="core/execution_spaces.html#serial"><span class="std std-ref">Serial</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p><span class="xref myst">Serial</span></p></td>
 <td class="text-left"><p><a class="reference internal" href="core-index.html"><span class="doc std std-doc">Core</span></a></p></td>
 <td class="text-left"><p><a class="reference internal" href="core/Spaces.html"><span class="doc std std-doc">Spaces</span></a></p></td>
 <td class="text-left"><p>Execution space using serial execution the CPU.</p></td>
@@ -1076,14 +1085,14 @@
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="algorithms/std-algorithms/all/StdIsSortedUntil.html">
+          <a class="prev-page" href="simd/where_expression.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title"><code class="docutils literal notranslate"><span class="pre">is_sorted_until</span></code></div>
+                <div class="title">Interface</div>
                 
               </div>
             </a>

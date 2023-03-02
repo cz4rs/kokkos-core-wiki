@@ -177,6 +177,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../ProgrammingGuide/Compatibility.html">12 Backwards &amp; Future Compatibility</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../ProgrammingGuide/Interoperability.html">13. Interoperability and Legacy Codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../ProgrammingGuide/Kokkos-and-Virtual-Functions.html">14. Kokkos and Virtual Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ProgrammingGuide/SIMD.html">15. SIMD Types</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../requirements.html">Requirements</a></li>
@@ -187,7 +188,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/initialize.html"><code class="docutils literal notranslate"><span class="pre">initialize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/finalize.html"><code class="docutils literal notranslate"><span class="pre">finalize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/ScopeGuard.html">ScopeGuard</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/InitializationSettings.html">InitializationSettings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/InitializationSettings.html"><code class="docutils literal notranslate"><span class="pre">InitializationSettings</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/InitArguments.html">InitArguments</a></li>
 </ul>
 </li>
@@ -276,6 +277,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../numerics/mathematical-constants.html">Mathematical constants</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../numerics/mathematical-functions.html">Common math functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../numerics/numeric-traits.html">Numeric traits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../numerics/bit-manipulation.html">Bit manipulation</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../c_style_memory_management.html">C-style memory management</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -405,10 +407,17 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../simd-index.html">API: SIMD</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../simd/simd.html"><code class="docutils literal notranslate"><span class="pre">Experimental::simd</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../simd/simd_mask.html"><code class="docutils literal notranslate"><span class="pre">Experimental::simd_mask</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../simd/where_expression.html">Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../simd/where_expression.html#example">Example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../alphabetical.html">API in Alphabetical Order</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../DeprecationPage.html">Deprecation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../known-issues.html">Known issues</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../usecases.html">Use Cases and Examples</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../usecases.html">Use Cases and Examples</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../usecases/MPI-Halo-Exchange.html">MPI Halo Exchange</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../usecases/Average-To-Nodes.html">ScatterView averaging elements to nodes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../usecases/MDRangePolicy.html">MDRangePolicy Use Case</a></li>
@@ -422,7 +431,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../usecases/Moving_from_EnableUVM_to_SharedSpace.html">Moving code from requiring <code class="docutils literal notranslate"><span class="pre">Kokkos_ENABLE_CUDA_UVM</span></code> to using <code class="docutils literal notranslate"><span class="pre">SharedSpace</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../testing-and-issue-tracking.html">Testing and Issue Tracking</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../testing-and-issue-tracking.html">Testing and Issue Tracking</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../testing-and-issue-tracking/Requirements-Issues-and-Feedback.html">Requirements, Issues and Feedback</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../testing-and-issue-tracking/Testing-Process-Details.html">Attachments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../testing-and-issue-tracking/Testing-Processes.html">Kokkos Testing Processes and Change Process</a></li>
@@ -430,7 +439,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/kokkos/kokkos-tutorials">Tutorials</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../videolectures.html">Video lectures and slides</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../videolectures.html">Video lectures and slides</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=rUIcWtFU5qM">1. Intro, Build, Parallel dispatch</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=O-asHTtO7O4">2. Views and Spaces</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=nGyJS8u-6GY">3. Multidim loops and Data Structures</a></li>
@@ -564,7 +573,7 @@
 <h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h3>
 <dl class="cppkokkos kokkosinlinefunction">
 <dt class="sig sig-object cppkokkos" id="_CPPv4NK4joinER10value_typeRK10value_type">
-<span id="_CPPv3NK4joinER10value_typeRK10value_type"></span><span id="_CPPv2NK4joinER10value_typeRK10value_type"></span><span id="join__value_typeR.value_typeCRC"></span><span class="k"><span class="pre">KOKKOS_INLINE_FUNCTION</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">join</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">value_type</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dest</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">value_type</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">;</span></span><a class="headerlink" href="#_CPPv4NK4joinER10value_typeRK10value_type" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK4joinER10value_typeRK10value_type"></span><span id="_CPPv2NK4joinER10value_typeRK10value_type"></span><span id="join__value_typeR.value_typeCRC"></span><span class="k"><span class="pre">KOKKOS_INLINE_FUNCTION</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">join</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">value_type</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">dest</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">value_type</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">src</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">;</span></span><br /></dt>
 <dd><ul class="simple">
 <li><p>Store minimum with location of <code class="docutils literal notranslate"><span class="pre">src</span></code> and <code class="docutils literal notranslate"><span class="pre">dest</span></code> into <code class="docutils literal notranslate"><span class="pre">dest</span></code>.</p></li>
 <li><p>Store maximum with location of <code class="docutils literal notranslate"><span class="pre">src</span></code> and <code class="docutils literal notranslate"><span class="pre">dest</span></code> into <code class="docutils literal notranslate"><span class="pre">dest</span></code>.</p></li>
@@ -573,7 +582,7 @@
 
 <dl class="cppkokkos kokkosinlinefunction">
 <dt class="sig sig-object cppkokkos" id="_CPPv4NK4initER10value_type">
-<span id="_CPPv3NK4initER10value_type"></span><span id="_CPPv2NK4initER10value_type"></span><span id="init__value_typeRC"></span><span class="k"><span class="pre">KOKKOS_INLINE_FUNCTION</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">value_type</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">;</span></span><a class="headerlink" href="#_CPPv4NK4initER10value_type" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK4initER10value_type"></span><span id="_CPPv2NK4initER10value_type"></span><span id="init__value_typeRC"></span><span class="k"><span class="pre">KOKKOS_INLINE_FUNCTION</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">init</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">value_type</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">val</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">;</span></span><br /></dt>
 <dd><p>Initialize <code class="docutils literal notranslate"><span class="pre">val.min_val</span></code> using the <code class="docutils literal notranslate"><span class="pre">Kokkos::reduction_identity&lt;Scalar&gt;::min()</span></code> method. The default implementation sets <code class="docutils literal notranslate"><span class="pre">val=&lt;TYPE&gt;_MAX</span></code>.</p>
 <p>Initialize <code class="docutils literal notranslate"><span class="pre">val.max_val</span></code> using the <code class="docutils literal notranslate"><span class="pre">Kokkos::reduction_identity&lt;Index&gt;::max()</span></code> method. The default implementation sets <code class="docutils literal notranslate"><span class="pre">val=&lt;TYPE&gt;_MIN</span></code>.</p>
 <p>Initialize <code class="docutils literal notranslate"><span class="pre">val.min_loc</span></code> using the <code class="docutils literal notranslate"><span class="pre">Kokkos::reduction_identity&lt;Scalar&gt;::min()</span></code> method. The default implementation sets <code class="docutils literal notranslate"><span class="pre">val=&lt;TYPE&gt;_MAX</span></code>.</p>
@@ -582,7 +591,7 @@
 
 <dl class="cppkokkos kokkosinlinefunction">
 <dt class="sig sig-object cppkokkos" id="_CPPv4NK9referenceEv">
-<span id="_CPPv3NK9referenceEv"></span><span id="_CPPv2NK9referenceEv"></span><span id="referenceC"></span><span class="k"><span class="pre">KOKKOS_INLINE_FUNCTION</span></span><span class="w"> </span><span class="n"><span class="pre">value_type</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">reference</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">;</span></span><a class="headerlink" href="#_CPPv4NK9referenceEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK9referenceEv"></span><span id="_CPPv2NK9referenceEv"></span><span id="referenceC"></span><span class="k"><span class="pre">KOKKOS_INLINE_FUNCTION</span></span><span class="w"> </span><span class="n"><span class="pre">value_type</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">reference</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">;</span></span><br /></dt>
 <dd><ul class="simple">
 <li><p>Returns a reference to the result provided in class constructor.</p></li>
 </ul>
@@ -590,7 +599,7 @@
 
 <dl class="cppkokkos kokkosinlinefunction">
 <dt class="sig sig-object cppkokkos" id="_CPPv4NK4viewEv">
-<span id="_CPPv3NK4viewEv"></span><span id="_CPPv2NK4viewEv"></span><span id="viewC"></span><span class="k"><span class="pre">KOKKOS_INLINE_FUNCTION</span></span><span class="w"> </span><span class="n"><span class="pre">result_view_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">view</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">;</span></span><a class="headerlink" href="#_CPPv4NK4viewEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK4viewEv"></span><span id="_CPPv2NK4viewEv"></span><span id="viewC"></span><span class="k"><span class="pre">KOKKOS_INLINE_FUNCTION</span></span><span class="w"> </span><span class="n"><span class="pre">result_view_type</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">view</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">;</span></span><br /></dt>
 <dd><ul class="simple">
 <li><p>Returns a view of the result place provided in class constructor.</p></li>
 </ul>
