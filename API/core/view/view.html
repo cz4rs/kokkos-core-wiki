@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="view_alloc()" href="view_alloc.html" /><link rel="prev" title="Kokkos::Subview" href="Subview_type.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="view_alloc" href="view_alloc.html" /><link rel="prev" title="Kokkos::Subview" href="Subview_type.html" />
 
     <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
         <title>View - Kokkos documentation</title>
@@ -187,14 +187,14 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../Initialize-and-Finalize.html">Initialize and Finalize</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/initialize.html"><code class="docutils literal notranslate"><span class="pre">initialize</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/finalize.html"><code class="docutils literal notranslate"><span class="pre">finalize</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/ScopeGuard.html">ScopeGuard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/ScopeGuard.html"><code class="docutils literal notranslate"><span class="pre">ScopeGuard</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/InitializationSettings.html"><code class="docutils literal notranslate"><span class="pre">InitializationSettings</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../initialize_finalize/InitArguments.html">InitArguments</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../View.html">View and related</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="create_mirror.html"><code class="docutils literal notranslate"><span class="pre">create_mirror[_view]</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="deep_copy.html"><code class="docutils literal notranslate"><span class="pre">deep_copy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="deep_copy.html"><code class="docutils literal notranslate"><span class="pre">deep_copy</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="layoutLeft.html"><code class="docutils literal notranslate"><span class="pre">LayoutLeft</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="layoutRight.html"><code class="docutils literal notranslate"><span class="pre">LayoutRight</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="layoutStride.html"><code class="docutils literal notranslate"><span class="pre">LayoutStride</span></code></a></li>
@@ -203,18 +203,18 @@
 <li class="toctree-l3"><a class="reference internal" href="subview.html"><code class="docutils literal notranslate"><span class="pre">subview</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="Subview_type.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::Subview</span></code></a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">View</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="view_alloc.html"><code class="docutils literal notranslate"><span class="pre">view_alloc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="view_alloc.html"><code class="docutils literal notranslate"><span class="pre">view_alloc</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="view_like.html">View-like Types</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../ParallelDispatch.html">Parallel Execution/Dispatch</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/parallel_for.html"><code class="docutils literal notranslate"><span class="pre">parallel_for()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/parallel_reduce.html"><code class="docutils literal notranslate"><span class="pre">parallel_reduce()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/parallel_scan.html"><code class="docutils literal notranslate"><span class="pre">parallel_scan()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/fence.html"><code class="docutils literal notranslate"><span class="pre">fence()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/ParallelForTag.html"><code class="docutils literal notranslate"><span class="pre">ParallelForTag()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/ParallelReduceTag.html"><code class="docutils literal notranslate"><span class="pre">ParallelReduceTag()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/ParallelScanTag.html"><code class="docutils literal notranslate"><span class="pre">ParallelScanTag()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/parallel_for.html"><code class="docutils literal notranslate"><span class="pre">parallel_for</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/parallel_reduce.html"><code class="docutils literal notranslate"><span class="pre">parallel_reduce</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/parallel_scan.html"><code class="docutils literal notranslate"><span class="pre">parallel_scan</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/fence.html"><code class="docutils literal notranslate"><span class="pre">fence</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/ParallelForTag.html"><code class="docutils literal notranslate"><span class="pre">ParallelForTag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/ParallelReduceTag.html"><code class="docutils literal notranslate"><span class="pre">ParallelReduceTag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../parallel-dispatch/ParallelScanTag.html"><code class="docutils literal notranslate"><span class="pre">ParallelScanTag</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../builtin_reducers.html">Built-in Reducers</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -256,7 +256,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../Spaces.html">Spaces</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../execution_spaces.html">Execution Spaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../spaces/partition_space.html">Kokkos::partition_space()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spaces/partition_space.html"><code class="docutils literal notranslate"><span class="pre">partition_space</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../memory_spaces.html">Memory Spaces</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../SpaceAccessibility.html">Space Accessibility</a></li>
 </ul>
@@ -297,6 +297,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../utilities/all.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::ALL</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/complex.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::complex</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/timer.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::Timer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/device_id.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::device_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/num_threads.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::num_threads</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/experimental.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::Experimental</span></code></a></li>
 </ul>
 </li>
@@ -410,12 +412,11 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../simd-index.html">API: SIMD</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../simd/simd.html"><code class="docutils literal notranslate"><span class="pre">Experimental::simd</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../simd/simd_mask.html"><code class="docutils literal notranslate"><span class="pre">Experimental::simd_mask</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../simd/where_expression.html">Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../simd/where_expression.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../simd/where_expression.html"><code class="docutils literal notranslate"><span class="pre">Experimental::where_expression</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../alphabetical.html">API in Alphabetical Order</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../DeprecationPage.html">Deprecation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../deprecation_page.html">Deprecation for Kokkos-3.x</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../known-issues.html">Known issues</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../usecases.html">Use Cases and Examples</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../usecases/MPI-Halo-Exchange.html">MPI Halo Exchange</a></li>
@@ -534,11 +535,11 @@ Examples:</p>
 <p>Determines the mapping of indices into the underlying 1D memory storage.
 Custom Layouts can be implemented, but Kokkos comes with some built-in ones:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="layoutRight.html"><code class="xref cppkokkos cppkokkos-func docutils literal notranslate"><span class="pre">LayoutRight()</span></code></a>: strides increase from the right most to the left most dimension. The last dimension has
+<li><p><a class="reference external" href="layoutRight.html"><a class="reference internal" href="layoutRight.html#_CPPv411LayoutRight" title="LayoutRight"><code class="xref cppkokkos cppkokkos-func docutils literal notranslate"><span class="pre">LayoutRight()</span></code></a></a>: strides increase from the right most to the left most dimension. The last dimension has
 a stride of one. This corresponds to how C multi dimensional arrays (<code class="docutils literal notranslate"><span class="pre">[][][]</span></code>) are laid out in memory.</p></li>
-<li><p><a class="reference external" href="layoutLeft.html"><code class="xref cppkokkos cppkokkos-func docutils literal notranslate"><span class="pre">LayoutLeft()</span></code></a>: strides increase from the left most to the right most dimension.
+<li><p><a class="reference external" href="layoutLeft.html"><a class="reference internal" href="layoutLeft.html#_CPPv410LayoutLeft" title="LayoutLeft"><code class="xref cppkokkos cppkokkos-func docutils literal notranslate"><span class="pre">LayoutLeft()</span></code></a></a>: strides increase from the left most to the right most dimension.
 The first dimension has a stride of one. This is the layout Fortran uses for its arrays.</p></li>
-<li><p><a class="reference external" href="layoutStride.html"><code class="xref cppkokkos cppkokkos-func docutils literal notranslate"><span class="pre">LayoutStride()</span></code></a>: strides can be arbitrary for each dimension.</p></li>
+<li><p><a class="reference external" href="layoutStride.html"><a class="reference internal" href="layoutStride.html#_CPPv412LayoutStride6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t6size_t" title="LayoutStride"><code class="xref cppkokkos cppkokkos-func docutils literal notranslate"><span class="pre">LayoutStride()</span></code></a></a>: strides can be arbitrary for each dimension.</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">MemorySpace</span></code>:</p>
@@ -566,10 +567,21 @@ If the view is also <code class="docutils literal notranslate"><span class="pre"
 <section id="enums">
 <h3>Enums<a class="headerlink" href="#enums" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">rank</span></code>: rank of the view (i.e. the dimensionality).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rank_dynamic</span></code>: number of runtime determined dimensions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rank</span></code>: rank of the view (i.e. the dimensionality) <strong>(until Kokkos 4.1)</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rank_dynamic</span></code>: number of runtime determined dimensions <strong>(until Kokkos 4.1)</strong></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">reference_type_is_lvalue_reference</span></code>: whether the reference type is a C++ lvalue reference.</p></li>
 </ul>
+<p><strong>(since Kokkos 4.1)</strong> <code class="docutils literal notranslate"><span class="pre">rank</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_dynamic</span></code> are static member constants that are convertible to <code class="docutils literal notranslate"><span class="pre">size_t</span></code>.
+Their underlying types are unspecified, but equivalent to <code class="docutils literal notranslate"><span class="pre">std::integral_constant</span></code> with a nullary
+member function callable from host and device side.
+Users are encouraged to use <code class="docutils literal notranslate"><span class="pre">rank()</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_dynamic()</span></code> (akin to a static member function call)
+instead of relying on implicit conversion to an integral type.</p>
+<p>The actual type of <code class="docutils literal notranslate"><span class="pre">rank[_dymanic]</span></code> as it was defined until Kokkos 4.1 was left up to the implementation
+(that is, up to the compiler not to Kokkos) but in practice it was often <code class="docutils literal notranslate"><span class="pre">int</span></code> which means
+this change may yield warnings about comparing signed and unsigned integral types.
+It may also break code that was using the type of <code class="docutils literal notranslate"><span class="pre">View::rank</span></code>.
+Furthermore, it appears that MSVC has issues with the implicit conversion to
+<code class="docutils literal notranslate"><span class="pre">size_t</span></code> in certain constexpr contexts. Calling <code class="docutils literal notranslate"><span class="pre">rank()</span></code> or <code class="docutils literal notranslate"><span class="pre">rank_dynamic()</span></code> will work in those cases.</p>
 </section>
 <section id="typedefs">
 <h3>Typedefs<a class="headerlink" href="#typedefs" title="Permalink to this heading">#</a></h3>
@@ -757,7 +769,7 @@ In the latter case, the extents corresponding to compile-time dimensions must ma
 
 <dl class="cppkokkos function">
 <dt class="sig sig-object cppkokkos" id="_CPPv44ViewRKNSt6stringERK12array_layout">
-<span id="_CPPv34ViewRKNSt6stringERK12array_layout"></span><span id="_CPPv24ViewRKNSt6stringERK12array_layout"></span><span id="View__ssCR.array_layoutCR"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">array_layout</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">layout</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44ViewRKNSt6stringERK12array_layout" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv34ViewRKNSt6stringERK12array_layout"></span><span id="_CPPv24ViewRKNSt6stringERK12array_layout"></span><span id="View__ssCR.array_layoutCR"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="layoutStride.html#_CPPv412array_layout" title="array_layout"><span class="n"><span class="pre">array_layout</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">layout</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44ViewRKNSt6stringERK12array_layout" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Standard allocating constructor. The initialization is executed on the default
 instance of the execution space corresponding to <code class="docutils literal notranslate"><span class="pre">MemorySpace</span></code> and fences it.</p>
 <ul class="simple">
@@ -786,7 +798,7 @@ In the latter case, the extents corresponding to compile-time dimensions must ma
 
 <dl class="cppkokkos function">
 <dt class="sig sig-object cppkokkos" id="_CPPv44ViewRK15AllocPropertiesRK12array_layout">
-<span id="_CPPv34ViewRK15AllocPropertiesRK12array_layout"></span><span id="_CPPv24ViewRK15AllocPropertiesRK12array_layout"></span><span id="View__AllocPropertiesCR.array_layoutCR"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">AllocProperties</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">prop</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">array_layout</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">layout</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44ViewRK15AllocPropertiesRK12array_layout" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv34ViewRK15AllocPropertiesRK12array_layout"></span><span id="_CPPv24ViewRK15AllocPropertiesRK12array_layout"></span><span id="View__AllocPropertiesCR.array_layoutCR"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">AllocProperties</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">prop</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="layoutStride.html#_CPPv412array_layout" title="array_layout"><span class="n"><span class="pre">array_layout</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">layout</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44ViewRK15AllocPropertiesRK12array_layout" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Allocating constructor with allocation properties and a layout object. If an execution space is
 specified in <code class="docutils literal notranslate"><span class="pre">prop</span></code>, the initialization uses it and does not fence. Otherwise, the View is
 initialized using the default execution space instance corresponding to <code class="docutils literal notranslate"><span class="pre">MemorySpace</span></code> and fences it.</p>
@@ -799,8 +811,8 @@ to compile-time dimensions must match the View type’s compile-time extents.</p
 </dd></dl>
 
 <dl class="cppkokkos function">
-<dt class="sig sig-object cppkokkos" id="_CPPv44ViewRK12pointer_typeDpRK7IntType">
-<span id="_CPPv34ViewRK12pointer_typeDpRK7IntType"></span><span id="_CPPv24ViewRK12pointer_typeDpRK7IntType"></span><span id="View__pointer_typeCR.IntTypeCRDp"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">pointer_type</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">ptr</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">IntType</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44ViewRK12pointer_typeDpRK7IntType" title="Permalink to this definition">#</a><br /></dt>
+<dt class="sig sig-object cppkokkos" id="_CPPv44View12pointer_typeDpRK7IntType">
+<span id="_CPPv34View12pointer_typeDpRK7IntType"></span><span id="_CPPv24View12pointer_typeDpRK7IntType"></span><span id="View__pointer_type.IntTypeCRDp"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">pointer_type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ptr</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">IntType</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">indices</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44View12pointer_typeDpRK7IntType" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Unmanaged data wrapping constructor.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ptr</span></code>: pointer to a user provided memory allocation. Must provide storage of size <code class="docutils literal notranslate"><span class="pre">View::required_allocation_size(n0,...,nR)</span></code></p></li>
@@ -812,12 +824,12 @@ the extents corresponding to compile-time dimensions must match the View type’
 </dd></dl>
 
 <dl class="cppkokkos function">
-<dt class="sig sig-object cppkokkos">
-<span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">array_layout</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">layout</span></span><span class="sig-paren">)</span><br /></dt>
+<dt class="sig sig-object cppkokkos" id="_CPPv44View12pointer_typeRK12array_layout">
+<span id="_CPPv34View12pointer_typeRK12array_layout"></span><span id="_CPPv24View12pointer_typeRK12array_layout"></span><span id="View__pointer_type.array_layoutCR"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">pointer_type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ptr</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="layoutStride.html#_CPPv412array_layout" title="array_layout"><span class="n"><span class="pre">array_layout</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">layout</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44View12pointer_typeRK12array_layout" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Unmanaged data wrapper constructor.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ptr</span></code>: pointer to a user provided memory allocation. Must provide storage
-of size <code class="docutils literal notranslate"><span class="pre">View::required_allocation_size(layout)</span></code> (<em>NEEDS TO BE IMPLEMENTED</em>)</p></li>
+of size <code class="docutils literal notranslate"><span class="pre">View::required_allocation_size(layout)</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">layout</span></code>: an instance of a layout class. The number of valid extents must
 either match the dynamic rank or the total rank. In the latter case, the extents
 corresponding to compile-time dimensions must match the View type’s compile-time extents.</p></li>
@@ -839,7 +851,7 @@ In the latter case, the extents corresponding to compile-time dimensions must ma
 
 <dl class="cppkokkos function">
 <dt class="sig sig-object cppkokkos" id="_CPPv44ViewRK12ScratchSpaceRK12array_layout">
-<span id="_CPPv34ViewRK12ScratchSpaceRK12array_layout"></span><span id="_CPPv24ViewRK12ScratchSpaceRK12array_layout"></span><span id="View__ScratchSpaceCR.array_layoutCR"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">ScratchSpace</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">space</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">array_layout</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">layout</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44ViewRK12ScratchSpaceRK12array_layout" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv34ViewRK12ScratchSpaceRK12array_layout"></span><span id="_CPPv24ViewRK12ScratchSpaceRK12array_layout"></span><span id="View__ScratchSpaceCR.array_layoutCR"></span><span class="sig-name descname"><span class="n"><span class="pre">View</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">ScratchSpace</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">space</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="layoutStride.html#_CPPv412array_layout" title="array_layout"><span class="n"><span class="pre">array_layout</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">layout</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44ViewRK12ScratchSpaceRK12array_layout" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Constructor which acquires memory from a Scratch Memory handle.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">space</span></code>: scratch memory handle. Typically returned from <code class="docutils literal notranslate"><span class="pre">team_handles</span></code> in <code class="docutils literal notranslate"><span class="pre">TeamPolicy</span></code> kernels.</p></li>
@@ -880,8 +892,23 @@ See notes on <code class="docutils literal notranslate"><span class="pre">refere
 <section id="data-layout-dimensions-strides">
 <h3>Data Layout, Dimensions, Strides<a class="headerlink" href="#data-layout-dimensions-strides" title="Permalink to this heading">#</a></h3>
 <dl class="cppkokkos function">
+<dt class="sig sig-object cppkokkos" id="_CPPv44rankv">
+<span id="_CPPv34rankv"></span><span id="_CPPv24rankv"></span><span id="rankCE"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rank</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44rankv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p><strong>since Kokkos 4.1</strong>: Returns the rank of the view.</p>
+</dd></dl>
+
+<dl class="cppkokkos function">
+<dt class="sig sig-object cppkokkos" id="_CPPv412rank_dynamicv">
+<span id="_CPPv312rank_dynamicv"></span><span id="_CPPv212rank_dynamicv"></span><span id="rank_dynamicCE"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rank_dynamic</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412rank_dynamicv" title="Permalink to this definition">#</a><br /></dt>
+<dd><p><strong>since Kokkos 4.1</strong>: Returns the number of runtime determined dimensions.</p>
+</dd></dl>
+
+<p>Note: in practice, <code class="docutils literal notranslate"><span class="pre">rank()</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_dynamic()</span></code> are not actually
+implemented as static member functions but <code class="docutils literal notranslate"><span class="pre">rank</span></code> and <code class="docutils literal notranslate"><span class="pre">rank_dynamic</span></code> underlying
+types have a nullary member function (i.e. callable with no argument).</p>
+<dl class="cppkokkos function">
 <dt class="sig sig-object cppkokkos" id="_CPPv4NK6layoutEv">
-<span id="_CPPv3NK6layoutEv"></span><span id="_CPPv2NK6layoutEv"></span><span id="layoutCCE"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">array_layout</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">layout</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6layoutEv" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3NK6layoutEv"></span><span id="_CPPv2NK6layoutEv"></span><span id="layoutCCE"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="layoutStride.html#_CPPv412array_layout" title="array_layout"><span class="n"><span class="pre">array_layout</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">layout</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK6layoutEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the layout object. Can be used to to construct other views with the same dimensions.</p>
 </dd></dl>
 
@@ -1000,7 +1027,7 @@ in span belongs to the index space covered by the view).</p>
 
 <dl class="cppkokkos function">
 <dt class="sig sig-object cppkokkos" id="_CPPv424required_allocation_sizeRK12array_layout">
-<span id="_CPPv324required_allocation_sizeRK12array_layout"></span><span id="_CPPv224required_allocation_sizeRK12array_layout"></span><span id="required_allocation_size__array_layoutCRCE"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">required_allocation_size</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">array_layout</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">layout</span></span><span class="sig-paren">)</span><span class="p"><span class="pre">;</span></span><a class="headerlink" href="#_CPPv424required_allocation_sizeRK12array_layout" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv324required_allocation_sizeRK12array_layout"></span><span id="_CPPv224required_allocation_sizeRK12array_layout"></span><span id="required_allocation_size__array_layoutCRCE"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">required_allocation_size</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="layoutStride.html#_CPPv412array_layout" title="array_layout"><span class="n"><span class="pre">array_layout</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">layout</span></span><span class="sig-paren">)</span><span class="p"><span class="pre">;</span></span><a class="headerlink" href="#_CPPv424required_allocation_sizeRK12array_layout" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Returns the number of bytes necessary for an unmanaged view of the provided layout.</p>
 </dd></dl>
 
@@ -1165,7 +1192,7 @@ These rules only cover cases where both layouts are one of <code class="docutils
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title"><code class="docutils literal notranslate"><span class="pre">view_alloc()</span></code></div>
+                <div class="title"><code class="docutils literal notranslate"><span class="pre">view_alloc</span></code></div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
