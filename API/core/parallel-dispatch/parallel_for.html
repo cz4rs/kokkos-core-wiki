@@ -296,6 +296,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../utilities/abort.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::abort</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/all.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::ALL</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/complex.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::complex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/printf.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::printf</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/timer.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::Timer</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/device_id.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::device_id</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/num_threads.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::num_threads</span></code></a></li>
@@ -432,7 +433,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../usecases/Moving_from_EnableUVM_to_SharedSpace.html">Moving code from requiring <code class="docutils literal notranslate"><span class="pre">Kokkos_ENABLE_CUDA_UVM</span></code> to using <code class="docutils literal notranslate"><span class="pre">SharedSpace</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../testing-and-issue-tracking.html">Testing and Issue Tracking</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../testing-and-issue-tracking.html">Kokkos Planning and Testing</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../testing-and-issue-tracking/Kokkos-Project-Planning.html">Kokkos Project Planning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../testing-and-issue-tracking/Requirements-Issues-and-Feedback.html">Requirements, Issues and Feedback</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../testing-and-issue-tracking/Testing-Process-Details.html">Attachments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../testing-and-issue-tracking/Testing-Processes.html">Kokkos Testing Processes and Change Process</a></li>
@@ -570,7 +572,7 @@ used by profiling and debugging tools. This call may be asynchronous and return 
 
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
 
-<span class="w">    </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">parallel_for</span><span class="p">(</span><span class="s">&quot;Loop1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">KOKKOS_LAMBDA</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">parallel_for</span><span class="p">(</span><span class="s">&quot;Loop1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">KOKKOS_LAMBDA</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Greeting from iteration %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
 <span class="w">    </span><span class="p">});</span>
 
