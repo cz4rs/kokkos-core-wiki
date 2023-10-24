@@ -454,7 +454,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/kokkos/kokkos">GitHub Repo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../templates/index.html">Documentation Templates</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../templates/class_api.html">Class API Template</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../citation.html">Citing Kokkos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
 </ul>
@@ -781,7 +787,7 @@ With the lambda being considered as <code class="docutils literal notranslate"><
 <section id="restricting-execution-to-a-single-executor">
 <h3>8.4.3 Restricting execution to a single executor<a class="headerlink" href="#restricting-execution-to-a-single-executor" title="Permalink to this heading">#</a></h3>
 <p>As stated above, a kernel is a parallel region with respect to threads (and vector lanes) within a team. This means that global memory accesses outside of the respective nested levels potentially have to be protected against repetitive execution. A common example is the case where a team performs some calculation but only one result per team has to be written back to global memory.</p>
-<p>Kokkos provides the <code class="docutils literal notranslate"><span class="pre">Kokkkos::single(Policy,Lambda)</span></code> function for this case. It currently accepts two policies:</p>
+<p>Kokkos provides the <code class="docutils literal notranslate"><span class="pre">Kokkos::single(Policy,Lambda)</span></code> function for this case. It currently accepts two policies:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Kokkos::PerTeam</span></code> restricts execution of the lambda’s body to once per team</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Kokkos::PerThread</span></code> restricts execution of the lambda’s body to once per thread (that is, to only one vector lane in a thread)</p></li>
