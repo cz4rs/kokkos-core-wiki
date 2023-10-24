@@ -586,6 +586,56 @@ used by profiling and debugging tools. This call may be asynchronous and return 
 <span class="p">}</span>
 </pre></div>
 </div>
+<a href="https://godbolt.org/z/q9h339vob" target="_blank">Edit on Compiler Explorer</a><div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://godbolt.org/z/q9h339vob">https://godbolt.org/z/q9h339vob</a></span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">// Print the name of Kokkos&#39; default execution space.  We&#39;re using</span>
+<span class="w">  </span><span class="c1">// typeid here, so the name might get a bit mangled by the linker,</span>
+<span class="w">  </span><span class="c1">// but you should still be able to figure out what it is.</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World on Kokkos execution space %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="k">typeid</span><span class="p">(</span><span class="n">Kokkos</span><span class="o">::</span><span class="n">DefaultExecutionSpace</span><span class="p">).</span><span class="n">name</span><span class="p">());</span>
+
+<span class="w">  </span><span class="c1">// Run lambda on the default Kokkos execution space in parallel,</span>
+<span class="w">  </span><span class="c1">// with a parallel for loop count of 15.  The lambda&#39;s argument is</span>
+<span class="w">  </span><span class="c1">// an integer which is the parallel for&#39;s loop index.  As you learn</span>
+<span class="w">  </span><span class="c1">// about different kinds of parallelism, you will find out that</span>
+<span class="w">  </span><span class="c1">// there are other valid argument types as well.</span>
+<span class="w">  </span><span class="c1">//</span>
+<span class="w">  </span><span class="c1">// For a single level of parallelism, we prefer that you use the</span>
+<span class="w">  </span><span class="c1">// KOKKOS_LAMBDA macro.  If CUDA is disabled, this just turns into</span>
+<span class="w">  </span><span class="c1">// [=].  That captures variables from the surrounding scope by</span>
+<span class="w">  </span><span class="c1">// value.  Do NOT capture them by reference!  If CUDA is enabled,</span>
+<span class="w">  </span><span class="c1">// this macro may have a special definition that makes the lambda</span>
+<span class="w">  </span><span class="c1">// work correctly with CUDA.  Compare to the KOKKOS_INLINE_FUNCTION</span>
+<span class="w">  </span><span class="c1">// macro, which has a special meaning if CUDA is enabled.</span>
+<span class="w">  </span><span class="c1">//</span>
+<span class="w">  </span><span class="c1">// The following parallel_for would look like this if we were using</span>
+<span class="w">  </span><span class="c1">// OpenMP by itself, instead of Kokkos:</span>
+<span class="w">  </span><span class="c1">//</span>
+<span class="w">  </span><span class="c1">// #pragma omp parallel for</span>
+<span class="w">  </span><span class="c1">// for (int i = 0; i &lt; 15; ++i) {</span>
+<span class="w">  </span><span class="c1">//   printf (&quot;Hello from i = %i\n&quot;, i);</span>
+<span class="w">  </span><span class="c1">// }</span>
+<span class="w">  </span><span class="c1">//</span>
+<span class="w">  </span><span class="c1">// You may notice that the printed numbers do not print out in</span>
+<span class="w">  </span><span class="c1">// order.  Parallel for loops may execute in any order.</span>
+<span class="w">  </span><span class="c1">// We also need to protect the usage of a lambda against compiling</span>
+<span class="w">  </span><span class="c1">// with a backend which doesn&#39;t support it (i.e. Cuda 6.5/7.0).</span>
+<span class="cp">#if defined(KOKKOS_ENABLE_CXX11_DISPATCH_LAMBDA)</span>
+<span class="w">  </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">parallel_for</span><span class="p">(</span>
+<span class="w">      </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="n">KOKKOS_LAMBDA</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// FIXME_SYCL needs workaround for printf</span>
+<span class="cp">#ifndef __SYCL_DEVICE_ONLY__</span>
+<span class="w">        </span><span class="c1">// printf works in a CUDA parallel kernel; std::ostream does not.</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello from i = %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="cp">#else</span>
+<span class="w">	</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">i</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="w">      </span><span class="p">});</span>
+<span class="cp">#endif</span>
+<span class="w">  </span><span class="c1">// You must call finalize() after you are done using Kokkos.</span>
+</pre></div>
+</div>
+</div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TeamPolicy</span></code> policy with C++ struct as  functor.  Note that the KOKKOS_INLINE_FUNCTION macro adds all of the function specifiers necessary for the target execution space.  The TagA/B structs also provide the ability to ‘overload’ the operators within the same functor.  Much like the lambda example, the functor and any member variables contained within are captured by value, which means they must have either implicit or explicit copy constructors.</p></li>
 </ul>
