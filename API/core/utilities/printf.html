@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Kokkos::Timer" href="timer.html" /><link rel="prev" title="Kokkos::complex" href="complex.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Kokkos::Timer" href="timer.html" /><link rel="prev" title="Minimum/maximum operations" href="min_max_clamp.html" />
 
     <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
         <title>Kokkos::printf - Kokkos documentation</title>
@@ -136,7 +136,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -295,7 +295,9 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../Utilities.html">Utilities</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="abort.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::abort</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="all.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::ALL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assert.html"><code class="docutils literal notranslate"><span class="pre">KOKKOS_ASSERT</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="complex.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::complex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="min_max_clamp.html">Minimum/maximum operations</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Kokkos::printf</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="timer.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::Timer</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="device_id.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::device_id</span></code></a></li>
@@ -461,6 +463,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../citation.html">Citing Kokkos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../license.html">License</a></li>
 </ul>
@@ -501,7 +504,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -509,14 +512,35 @@
         <article role="main">
           <section id="kokkos-printf">
 <h1><code class="docutils literal notranslate"><span class="pre">Kokkos::printf</span></code><a class="headerlink" href="#kokkos-printf" title="Permalink to this heading">#</a></h1>
-<p>Defined in header <code class="docutils literal notranslate"><span class="pre">&lt;Kokkos_Core.hpp&gt;</span></code></p>
+<p>Defined in header <a class="reference external" href="https://github.com/kokkos/kokkos/blob/4.2.00/core/src/Kokkos_Printf.hpp"><code class="docutils literal notranslate"><span class="pre">&lt;Kokkos_Printf.hpp&gt;</span></code></a> which is included from <code class="docutils literal notranslate"><span class="pre">&lt;Kokkos_Core.hpp&gt;</span></code></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
-<span class="n">KOKKOS_FUNCTION</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
+<span class="n">KOKKOS_FUNCTION</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">);</span><span class="w">  </span><span class="c1">// (since 4.2)</span>
 </pre></div>
 </div>
 <p>Prints the data specified in <code class="docutils literal notranslate"><span class="pre">format</span></code> and <code class="docutils literal notranslate"><span class="pre">args...</span></code> to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>.
 The behavior is analogous to <code class="docutils literal notranslate"><span class="pre">std::printf</span></code>, but the return type is <code class="docutils literal notranslate"><span class="pre">void</span></code>
 to ensure a consistent behavior across backends.</p>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Kokkos_Core.hpp&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">parallel_for</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">KOKKOS_LAMBDA</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello world from thread %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">finalize</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Kokkos::printf()</span></code> function was added in release 4.2</p></li>
+<li><p>Calling <code class="docutils literal notranslate"><span class="pre">Kokkos::printf()</span></code> from a kernel may affect register usage and affect performance.</p></li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -533,14 +557,14 @@ to ensure a consistent behavior across backends.</p>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="complex.html">
+          <a class="prev-page" href="min_max_clamp.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title"><code class="docutils literal notranslate"><span class="pre">Kokkos::complex</span></code></div>
+                <div class="title">Minimum/maximum operations</div>
                 
               </div>
             </a>
@@ -564,8 +588,28 @@ to ensure a consistent behavior across backends.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">Kokkos::printf</span></code></a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

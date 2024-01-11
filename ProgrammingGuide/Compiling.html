@@ -295,7 +295,9 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../API/core/Utilities.html">Utilities</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../API/core/utilities/abort.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::abort</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../API/core/utilities/all.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::ALL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API/core/utilities/assert.html"><code class="docutils literal notranslate"><span class="pre">KOKKOS_ASSERT</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../API/core/utilities/complex.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::complex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../API/core/utilities/min_max_clamp.html">Minimum/maximum operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../API/core/utilities/printf.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::printf</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../API/core/utilities/timer.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::Timer</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../API/core/utilities/device_id.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::device_id</span></code></a></li>
@@ -461,6 +463,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../citation.html">Citing Kokkos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
 </ul>
@@ -661,18 +664,6 @@ There are numerous device backends, options, and architecture-specific optimizat
 </pre></div>
 </div>
 <p>which activates the OpenMP backend. All the options controlling device backends, options, architectures, and third-party libraries (TPLs) are given in <a class="reference internal" href="../keywords.html"><span class="doc std std-doc">CMake Keywords</span></a>.</p>
-<section id="using-generate-makefile-bash">
-<h3>Using generate_makefile.bash<a class="headerlink" href="#using-generate-makefile-bash" title="Permalink to this heading">#</a></h3>
-<p>As an alternative to calling the cmake command directly, the generate_makefile.bash command can be used to configure the CMake build environment.  The generate_makefile.bash equivalent to the above OpenMP example is as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">srcdir</span><span class="si">}</span>/generate_makefile.bash<span class="w"> </span>--compiler<span class="o">=</span>g++<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--with-openmp<span class="w"> </span>--prefix<span class="o">=</span><span class="si">${</span><span class="nv">my_install_folder</span><span class="si">}</span>
-</pre></div>
-</div>
-<p>For a full list of generate_makefile.bash options use the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">srcdir</span><span class="si">}</span>/generate_makefile.bash<span class="w"> </span>--help
-</pre></div>
-</div>
-</section>
 <section id="spack">
 <h3>Spack<a class="headerlink" href="#spack" title="Permalink to this heading">#</a></h3>
 <p>An alternative to manually building with CMake is to use the Spack package manager.
@@ -777,7 +768,6 @@ main: $(KOKKOS_LINK_DEPENDS) $(KOKKOS_CPP_DEPENDS) main.cpp
 </pre></div>
 </div>
 <p>More example application Makefiles can be found in the tutorial examples under <code class="docutils literal notranslate"><span class="pre">kokkos/example/tutorial</span></code>.</p>
-<p>Kokkos provides a script <code class="docutils literal notranslate"><span class="pre">generate_makefile.bash</span></code> which can generate a Makefile for building and installing the library as well as building and running the tests. Please run <code class="docutils literal notranslate"><span class="pre">generate_makefile.bash</span> <span class="pre">--help</span></code> to see options. Note that paths given to the script must be absolute paths, and the script must be run with the <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell (the script will do this if it is run directly, i.e., as <code class="docutils literal notranslate"><span class="pre">./generate_makefile.bash</span></code>).</p>
 <h4>Table 4.4: Variables for the GNU Makefile</h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
@@ -950,7 +940,6 @@ main: $(KOKKOS_LINK_DEPENDS) $(KOKKOS_CPP_DEPENDS) main.cpp
 </ul>
 </li>
 <li><a class="reference internal" href="#configuring-kokkos-with-cmake">Configuring Kokkos with CMake</a><ul>
-<li><a class="reference internal" href="#using-generate-makefile-bash">Using generate_makefile.bash</a></li>
 <li><a class="reference internal" href="#spack">Spack</a><ul>
 <li><a class="reference internal" href="#spack-development">Spack Development</a></li>
 </ul>

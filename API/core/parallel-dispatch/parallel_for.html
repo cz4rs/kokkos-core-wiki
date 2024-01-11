@@ -295,7 +295,9 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../Utilities.html">Utilities</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/abort.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::abort</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/all.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::ALL</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/assert.html"><code class="docutils literal notranslate"><span class="pre">KOKKOS_ASSERT</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/complex.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::complex</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utilities/min_max_clamp.html">Minimum/maximum operations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/printf.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::printf</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/timer.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::Timer</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utilities/device_id.html"><code class="docutils literal notranslate"><span class="pre">Kokkos::device_id</span></code></a></li>
@@ -461,6 +463,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../citation.html">Citing Kokkos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../license.html">License</a></li>
 </ul>
@@ -570,10 +573,6 @@ used by profiling and debugging tools. This call may be asynchronous and return 
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">IntegerType</span></code> policy with lambda as the functor.  Note that KOKKOS_LAMBDA is the same as [=] KOKKOS_FUNCTION, which means that all of the variables used within the lambda are captured by value.  Also, the KOKKOS_LAMBDA and KOKKOS_FUNCTION macros add all of the function specifiers necessary for the target execution space.</p></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Code snippet + a short link to compiler explorer.</p>
-</div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;Kokkos_Core.hpp&gt;</span>
 <span class="cp">#include</span><span class="cpf">&lt;cstdio&gt;</span>
 
@@ -590,60 +589,6 @@ used by profiling and debugging tools. This call may be asynchronous and return 
 <span class="p">}</span>
 </pre></div>
 </div>
-<a href="https://godbolt.org/z/q9h339vob" target="_blank">Edit on Compiler Explorer</a><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Code snippet taken directly from Kokkos Core (<code class="docutils literal notranslate"><span class="pre">hello_world_lambda.cpp</span></code>) + a link containing full source code of the example.</p>
-</div>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">hello_world_lambda.cpp</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">// Print the name of Kokkos&#39; default execution space.  We&#39;re using</span>
-<span class="w">  </span><span class="c1">// typeid here, so the name might get a bit mangled by the linker,</span>
-<span class="w">  </span><span class="c1">// but you should still be able to figure out what it is.</span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World on Kokkos execution space %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-<span class="w">         </span><span class="k">typeid</span><span class="p">(</span><span class="n">Kokkos</span><span class="o">::</span><span class="n">DefaultExecutionSpace</span><span class="p">).</span><span class="n">name</span><span class="p">());</span>
-
-<span class="w">  </span><span class="c1">// Run lambda on the default Kokkos execution space in parallel,</span>
-<span class="w">  </span><span class="c1">// with a parallel for loop count of 15.  The lambda&#39;s argument is</span>
-<span class="w">  </span><span class="c1">// an integer which is the parallel for&#39;s loop index.  As you learn</span>
-<span class="w">  </span><span class="c1">// about different kinds of parallelism, you will find out that</span>
-<span class="w">  </span><span class="c1">// there are other valid argument types as well.</span>
-<span class="w">  </span><span class="c1">//</span>
-<span class="w">  </span><span class="c1">// For a single level of parallelism, we prefer that you use the</span>
-<span class="w">  </span><span class="c1">// KOKKOS_LAMBDA macro.  If CUDA is disabled, this just turns into</span>
-<span class="w">  </span><span class="c1">// [=].  That captures variables from the surrounding scope by</span>
-<span class="w">  </span><span class="c1">// value.  Do NOT capture them by reference!  If CUDA is enabled,</span>
-<span class="w">  </span><span class="c1">// this macro may have a special definition that makes the lambda</span>
-<span class="w">  </span><span class="c1">// work correctly with CUDA.  Compare to the KOKKOS_INLINE_FUNCTION</span>
-<span class="w">  </span><span class="c1">// macro, which has a special meaning if CUDA is enabled.</span>
-<span class="w">  </span><span class="c1">//</span>
-<span class="w">  </span><span class="c1">// The following parallel_for would look like this if we were using</span>
-<span class="w">  </span><span class="c1">// OpenMP by itself, instead of Kokkos:</span>
-<span class="w">  </span><span class="c1">//</span>
-<span class="w">  </span><span class="c1">// #pragma omp parallel for</span>
-<span class="w">  </span><span class="c1">// for (int i = 0; i &lt; 15; ++i) {</span>
-<span class="w">  </span><span class="c1">//   printf (&quot;Hello from i = %i\n&quot;, i);</span>
-<span class="w">  </span><span class="c1">// }</span>
-<span class="w">  </span><span class="c1">//</span>
-<span class="w">  </span><span class="c1">// You may notice that the printed numbers do not print out in</span>
-<span class="w">  </span><span class="c1">// order.  Parallel for loops may execute in any order.</span>
-<span class="w">  </span><span class="c1">// We also need to protect the usage of a lambda against compiling</span>
-<span class="w">  </span><span class="c1">// with a backend which doesn&#39;t support it (i.e. Cuda 6.5/7.0).</span>
-<span class="cp">#if defined(KOKKOS_ENABLE_CXX11_DISPATCH_LAMBDA)</span>
-<span class="w">  </span><span class="n">Kokkos</span><span class="o">::</span><span class="n">parallel_for</span><span class="p">(</span>
-<span class="w">      </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="n">KOKKOS_LAMBDA</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// FIXME_SYCL needs workaround for printf</span>
-<span class="cp">#ifndef __SYCL_DEVICE_ONLY__</span>
-<span class="w">        </span><span class="c1">// printf works in a CUDA parallel kernel; std::ostream does not.</span>
-<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello from i = %i</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
-<span class="cp">#else</span>
-<span class="w">	</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">i</span><span class="p">;</span>
-<span class="cp">#endif</span>
-<span class="w">      </span><span class="p">});</span>
-<span class="cp">#endif</span>
-<span class="w">  </span><span class="c1">// You must call finalize() after you are done using Kokkos.</span>
-</pre></div>
-</div>
-<a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMrKyIsICJzb3VyY2UiOiAiLy9ASEVBREVSXG4vLyAqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKipcbi8vXG4vLyAgICAgICAgICAgICAgICAgICAgICAgIEtva2tvcyB2LiA0LjBcbi8vICAgICAgIENvcHlyaWdodCAoMjAyMikgTmF0aW9uYWwgVGVjaG5vbG9neSAmIEVuZ2luZWVyaW5nXG4vLyAgICAgICAgICAgICAgIFNvbHV0aW9ucyBvZiBTYW5kaWEsIExMQyAoTlRFU1MpLlxuLy9cbi8vIFVuZGVyIHRoZSB0ZXJtcyBvZiBDb250cmFjdCBERS1OQTAwMDM1MjUgd2l0aCBOVEVTUyxcbi8vIHRoZSBVLlMuIEdvdmVybm1lbnQgcmV0YWlucyBjZXJ0YWluIHJpZ2h0cyBpbiB0aGlzIHNvZnR3YXJlLlxuLy9cbi8vIFBhcnQgb2YgS29ra29zLCB1bmRlciB0aGUgQXBhY2hlIExpY2Vuc2UgdjIuMCB3aXRoIExMVk0gRXhjZXB0aW9ucy5cbi8vIFNlZSBodHRwczovL2tva2tvcy5vcmcvTElDRU5TRSBmb3IgbGljZW5zZSBpbmZvcm1hdGlvbi5cbi8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBBcGFjaGUtMi4wIFdJVEggTExWTS1leGNlcHRpb25cbi8vXG4vL0BIRUFERVJcblxuI2luY2x1ZGUgPEtva2tvc19Db3JlLmhwcD5cbiNpbmNsdWRlIDxjc3RkaW8-XG4jaW5jbHVkZSA8dHlwZWluZm8-XG5cbi8vXG4vLyBcIkhlbGxvIHdvcmxkXCIgcGFyYWxsZWxfZm9yIGV4YW1wbGU6XG4vLyAgIDEuIFN0YXJ0IHVwIEtva2tvc1xuLy8gICAyLiBFeGVjdXRlIGEgcGFyYWxsZWwgZm9yIGxvb3AgaW4gdGhlIGRlZmF1bHQgZXhlY3V0aW9uIHNwYWNlLFxuLy8gICAgICB1c2luZyBhIEMrKzExIGxhbWJkYSB0byBkZWZpbmUgdGhlIGxvb3AgYm9keVxuLy8gICAzLiBTaHV0IGRvd24gS29ra29zXG4vL1xuLy8gVGhpcyBleGFtcGxlIG9ubHkgYnVpbGRzIGlmIEMrKzExIGlzIGVuYWJsZWQuICBDb21wYXJlIHRoaXMgZXhhbXBsZVxuLy8gdG8gMDFfaGVsbG9fd29ybGQsIHdoaWNoIHVzZXMgZnVuY3RvcnMgKGV4cGxpY2l0bHkgZGVmaW5lZCBjbGFzc2VzKVxuLy8gdG8gZGVmaW5lIHRoZSBsb29wIGJvZHkgb2YgdGhlIHBhcmFsbGVsX2Zvci4gIEJvdGggZnVuY3RvcnMgYW5kXG4vLyBsYW1iZGFzIGhhdmUgdGhlaXIgcGxhY2VzLlxuLy9cblxuaW50IG1haW4oaW50IGFyZ2MsIGNoYXIqIGFyZ3ZbXSkge1xuICAvLyBZb3UgbXVzdCBjYWxsIGluaXRpYWxpemUoKSBiZWZvcmUgeW91IG1heSBjYWxsIEtva2tvcy5cbiAgLy9cbiAgLy8gV2l0aCBubyBhcmd1bWVudHMsIHRoaXMgaW5pdGlhbGl6ZXMgdGhlIGRlZmF1bHQgZXhlY3V0aW9uIHNwYWNlXG4gIC8vIChhbmQgcG90ZW50aWFsbHkgaXRzIGhvc3QgZXhlY3V0aW9uIHNwYWNlKSB3aXRoIGRlZmF1bHRcbiAgLy8gcGFyYW1ldGVycy4gIFlvdSBtYXkgYWxzbyBwYXNzIGluIGFyZ2MgYW5kIGFyZ3YsIGFuYWxvZ291c2x5IHRvXG4gIC8vIE1QSV9Jbml0KCkuICBJdCByZWFkcyBhbmQgcmVtb3ZlcyBjb21tYW5kLWxpbmUgYXJndW1lbnRzIHRoYXRcbiAgLy8gc3RhcnQgd2l0aCBcIi0ta29ra29zLVwiLlxuICBLb2trb3M6OmluaXRpYWxpemUoYXJnYywgYXJndik7XG5cbiAgLy8gUHJpbnQgdGhlIG5hbWUgb2YgS29ra29zJyBkZWZhdWx0IGV4ZWN1dGlvbiBzcGFjZS4gIFdlJ3JlIHVzaW5nXG4gIC8vIHR5cGVpZCBoZXJlLCBzbyB0aGUgbmFtZSBtaWdodCBnZXQgYSBiaXQgbWFuZ2xlZCBieSB0aGUgbGlua2VyLFxuICAvLyBidXQgeW91IHNob3VsZCBzdGlsbCBiZSBhYmxlIHRvIGZpZ3VyZSBvdXQgd2hhdCBpdCBpcy5cbiAgcHJpbnRmKFwiSGVsbG8gV29ybGQgb24gS29ra29zIGV4ZWN1dGlvbiBzcGFjZSAlc1xcblwiLFxuICAgICAgICAgdHlwZWlkKEtva2tvczo6RGVmYXVsdEV4ZWN1dGlvblNwYWNlKS5uYW1lKCkpO1xuXG4gIC8vIFJ1biBsYW1iZGEgb24gdGhlIGRlZmF1bHQgS29ra29zIGV4ZWN1dGlvbiBzcGFjZSBpbiBwYXJhbGxlbCxcbiAgLy8gd2l0aCBhIHBhcmFsbGVsIGZvciBsb29wIGNvdW50IG9mIDE1LiAgVGhlIGxhbWJkYSdzIGFyZ3VtZW50IGlzXG4gIC8vIGFuIGludGVnZXIgd2hpY2ggaXMgdGhlIHBhcmFsbGVsIGZvcidzIGxvb3AgaW5kZXguICBBcyB5b3UgbGVhcm5cbiAgLy8gYWJvdXQgZGlmZmVyZW50IGtpbmRzIG9mIHBhcmFsbGVsaXNtLCB5b3Ugd2lsbCBmaW5kIG91dCB0aGF0XG4gIC8vIHRoZXJlIGFyZSBvdGhlciB2YWxpZCBhcmd1bWVudCB0eXBlcyBhcyB3ZWxsLlxuICAvL1xuICAvLyBGb3IgYSBzaW5nbGUgbGV2ZWwgb2YgcGFyYWxsZWxpc20sIHdlIHByZWZlciB0aGF0IHlvdSB1c2UgdGhlXG4gIC8vIEtPS0tPU19MQU1CREEgbWFjcm8uICBJZiBDVURBIGlzIGRpc2FibGVkLCB0aGlzIGp1c3QgdHVybnMgaW50b1xuICAvLyBbPV0uICBUaGF0IGNhcHR1cmVzIHZhcmlhYmxlcyBmcm9tIHRoZSBzdXJyb3VuZGluZyBzY29wZSBieVxuICAvLyB2YWx1ZS4gIERvIE5PVCBjYXB0dXJlIHRoZW0gYnkgcmVmZXJlbmNlISAgSWYgQ1VEQSBpcyBlbmFibGVkLFxuICAvLyB0aGlzIG1hY3JvIG1heSBoYXZlIGEgc3BlY2lhbCBkZWZpbml0aW9uIHRoYXQgbWFrZXMgdGhlIGxhbWJkYVxuICAvLyB3b3JrIGNvcnJlY3RseSB3aXRoIENVREEuICBDb21wYXJlIHRvIHRoZSBLT0tLT1NfSU5MSU5FX0ZVTkNUSU9OXG4gIC8vIG1hY3JvLCB3aGljaCBoYXMgYSBzcGVjaWFsIG1lYW5pbmcgaWYgQ1VEQSBpcyBlbmFibGVkLlxuICAvL1xuICAvLyBUaGUgZm9sbG93aW5nIHBhcmFsbGVsX2ZvciB3b3VsZCBsb29rIGxpa2UgdGhpcyBpZiB3ZSB3ZXJlIHVzaW5nXG4gIC8vIE9wZW5NUCBieSBpdHNlbGYsIGluc3RlYWQgb2YgS29ra29zOlxuICAvL1xuICAvLyAjcHJhZ21hIG9tcCBwYXJhbGxlbCBmb3JcbiAgLy8gZm9yIChpbnQgaSA9IDA7IGkgPCAxNTsgKytpKSB7XG4gIC8vICAgcHJpbnRmIChcIkhlbGxvIGZyb20gaSA9ICVpXFxuXCIsIGkpO1xuICAvLyB9XG4gIC8vXG4gIC8vIFlvdSBtYXkgbm90aWNlIHRoYXQgdGhlIHByaW50ZWQgbnVtYmVycyBkbyBub3QgcHJpbnQgb3V0IGluXG4gIC8vIG9yZGVyLiAgUGFyYWxsZWwgZm9yIGxvb3BzIG1heSBleGVjdXRlIGluIGFueSBvcmRlci5cbiAgLy8gV2UgYWxzbyBuZWVkIHRvIHByb3RlY3QgdGhlIHVzYWdlIG9mIGEgbGFtYmRhIGFnYWluc3QgY29tcGlsaW5nXG4gIC8vIHdpdGggYSBiYWNrZW5kIHdoaWNoIGRvZXNuJ3Qgc3VwcG9ydCBpdCAoaS5lLiBDdWRhIDYuNS83LjApLlxuI2lmIGRlZmluZWQoS09LS09TX0VOQUJMRV9DWFgxMV9ESVNQQVRDSF9MQU1CREEpXG4gIEtva2tvczo6cGFyYWxsZWxfZm9yKFxuICAgICAgMTUsIEtPS0tPU19MQU1CREEoY29uc3QgaW50IGkpIHtcbiAgLy8gRklYTUVfU1lDTCBuZWVkcyB3b3JrYXJvdW5kIGZvciBwcmludGZcbiNpZm5kZWYgX19TWUNMX0RFVklDRV9PTkxZX19cbiAgICAgICAgLy8gcHJpbnRmIHdvcmtzIGluIGEgQ1VEQSBwYXJhbGxlbCBrZXJuZWw7IHN0ZDo6b3N0cmVhbSBkb2VzIG5vdC5cbiAgICAgICAgcHJpbnRmKFwiSGVsbG8gZnJvbSBpID0gJWlcXG5cIiwgaSk7XG4jZWxzZVxuXHQodm9pZClpO1xuI2VuZGlmXG4gICAgICB9KTtcbiNlbmRpZlxuICAvLyBZb3UgbXVzdCBjYWxsIGZpbmFsaXplKCkgYWZ0ZXIgeW91IGFyZSBkb25lIHVzaW5nIEtva2tvcy5cbiAgS29ra29zOjpmaW5hbGl6ZSgpO1xufVxuIiwgImNvbXBpbGVycyI6IFt7ImlkIjogImcxMzIiLCAib3B0aW9ucyI6ICItTzMiLCAibGlicyI6IFt7Im5hbWUiOiAia29ra29zIiwgInZlciI6ICI0MTAwIn1dfV19XX0=" target="_blank">Edit on Compiler Explorer</a></div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TeamPolicy</span></code> policy with C++ struct as  functor.  Note that the KOKKOS_INLINE_FUNCTION macro adds all of the function specifiers necessary for the target execution space.  The TagA/B structs also provide the ability to ‘overload’ the operators within the same functor.  Much like the lambda example, the functor and any member variables contained within are captured by value, which means they must have either implicit or explicit copy constructors.</p></li>
 </ul>
