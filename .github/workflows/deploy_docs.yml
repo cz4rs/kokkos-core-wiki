@@ -14,6 +14,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: Checkout kokkos
+        uses: actions/checkout@v3
+        with:
+          repository: kokkos/kokkos
+          path: kokkos
       - name: Set up Python ${{ env.python-version }}
         uses: actions/setup-python@v4
         with:
@@ -33,7 +38,6 @@ jobs:
         run: touch .nojekyll
       # This action moves the content of `generated_docs` to the `deploy-doc-site` branch
       - name: Deploy docs
-        if: ${{ github.ref == 'refs/heads/main' }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: deploy-doc-site
